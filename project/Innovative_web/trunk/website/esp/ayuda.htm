@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+
+<title>Innovative Medicine</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script type="text/javascript" src="/js/jsr_class.js"></script>
+
+<script language="JavaScript" type="text/JavaScript">
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+// Define the callback function
+function jsonHandler(jsonData) { 
+   var result = jsonData.result;
+
+   if (result == 'true'){
+  	 window.location = 'productos.html';
+   }else{
+  	 document.getElementById('errorMessage').innerHTML = '<p>&nbsp;</p><p>Error en usuario o password. Ingrese los datos nuevamente.</p>';
+   }
+
+   bObj.removeScriptTag(); 
+}
+
+
+function loginRequest()
+{
+	var userName = document.getElementById('username').value;
+	var password = document.getElementById('password').value;
+	
+	var req  = 'http://labs.mindpool.com.ar:8080/innovativeweb/webUser/login?username='+userName+'&password='+password; 
+
+	//Create a new request object
+	bObj = new JSONscriptRequest(req); 
+	//Build the dynamic script tag
+	bObj.buildScriptTag(); 
+	//Add the script tag to the page
+	bObj.addScriptTag();	
+}
+</script>
+<link href="/innovative.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.Estilo2 {color: #CCCCCC}
+-->
+</style>
+</head><body leftmargin="0" topmargin="0" onload="MM_preloadImages('../img/bot_link.gif','../img/bot_contacto.gif','../img/bot_comp2.gif','../img/bot_ayud2.gif','../img/bot_inicio2.gif')" marginheight="0" marginwidth="0">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tbody><tr>
+    <td align="center" bgcolor="#ffffff" height="60">      <table border="0" cellpadding="0" cellspacing="0" width="600">
+        <tbody><tr align="center">
+          <td bgcolor="#21c1de" height="60"><br>
+              <table border="0" cellpadding="0" cellspacing="0" width="550">
+            <tbody><tr align="center">
+              <td><div align="left"><a href="../index.htm" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image101','','../img/bot_inicio2.gif',1)"><img src="../img/bot_inicio.gif" name="Image101" id="Image101" border="0" height="12" width="48"></a></div></td>
+              <td><div align="center"><a href="index.htm" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image10','','../img/bot_comp2.gif',1)"><img src="../img/bot_comp.gif" name="Image10" border="0" height="12" width="75"></a></div></td>
+              <td><a href="ayuda.htm" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image8','','../img/bot_ayud2.gif',1)"><img src="../img/bot_ayud.gif" name="Image8" border="0" height="12" width="188"></a></td>
+              <td><a href="links.htm" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image4','','../img/bot_link.gif',1)"><img src="../img/bot_link2.gif" name="Image4" border="0" height="12" width="42"></a></td>
+              <td>&nbsp;</td>
+              <td width="150"><div align="right"><a href="contacto.htm" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image9','','../img/bot_contacto.gif',1)"><img src="../img/bot_contacto2.gif" name="Image9" border="0" height="12" width="76"></a></div></td>
+            </tr>
+          </tbody></table></td>
+        </tr>
+      </tbody></table></td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="#ffffff" height="136"><table border="0" cellpadding="0" cellspacing="0" width="600">
+      <tbody><tr align="center">
+        <td bgcolor="#080808" height="136"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" height="138" width="600">
+          <param name="movie" value="../doctores.swf">
+          <param name="quality" value="high">
+          <embed src="../doctores.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" height="138" width="600">
+        </object></td>
+        </tr>
+    </tbody></table></td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="#ffffff" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="600">
+        <tbody>
+          <tr align="center">
+          <td bgcolor="#ffffff" height="170"><div align="right">
+            <table border="0" cellpadding="0" cellspacing="0" width="600">
+              <tbody><tr align="center">
+                <td bgcolor="#ffffff" height="400" valign="top"><img src="../img/a_nada.gif" height="1" width="1">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tbody>
+                      <tr>
+                        <td><table border="0" cellpadding="0" cellspacing="2" width="100%">
+                          <tbody>
+                          <tr>
+                          	<td id="errorMessage" style="color:red" class="texch"></td>
+                          </tr>
+                          <tr>
+                            <td><table cellpadding="0" cellspacing="0">
+                                <tbody><tr>
+                                  <td class="texch"><p>&nbsp;</p>
+                                    <p><strong>Login</strong></p></td>
+                                </tr>
+                                <tr>
+                                  <td class="texch"><table class="cajagris" align="center" border="0" cellpadding="2" cellspacing="4" width="100%">
+                                      <tbody><tr>
+                                        <td width="150"><div class="texch" align="right">User</div></td>
+                                        <td width="122"><input id="username" name="username" class="texch" type="text"></td>
+                                        <td>&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td><div class="texch" align="right">Login</div></td>
+                                        <td><input id="password" name="password" class="texch" type="password"></td>
+                                        <td><a href="javascript:loginRequest();" class="otromenu">|enviar</a><a href="#" class="otromenu">&gt;</a></td>
+                                      </tr>
+                                    </tbody></table>
+                                    <p>&nbsp;</p>
+                                    <div align="right"></div></td>
+                                </tr>
+                                <tr>
+                                  <td><table cellpadding="0" cellspacing="0">
+                                      <tbody>
+                                      	<tr>
+                                        <td width="492">
+                                			<p><span class="fecha Estilo2">Registrese <a href="signup.html" class="otromenu">aqui</a></span></p>
+                                        	<p>&nbsp;</p>
+                                        </td>
+                                      </tr>
+                                  </tbody></table></td>
+                                </tr>
+                                <tr>
+                                  <td><table cellpadding="0" cellspacing="0">
+                                      <tbody><tr>
+                                        <td width="492">
+	                                        <span class="fecha Estilo2">Si no tiene los datos solicitados envie un mail a </span>
+	                                        <span class="telefonos"><a href="mailto:info@innovativemedicines.com" class="otromenu">info@innovativemedicines.com</a></span>
+                                        </td>
+                                      </tr>
+                                  </tbody></table></td>
+                                </tr>
+                            </tbody></table></td>
+                          </tr>
+                        </tbody></table></td>
+                        <td valign="top" width="155"><div align="right">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                              <tbody><tr>
+                                <td height="220" valign="bottom"><div align="right"><a href="http://www.innovativemedicines.com/index.htm"><img src="../img/logo2.gif" border="0" height="51" width="139"></a></div></td>
+                              </tr>
+                            </tbody></table>
+                        </div></td>
+                      </tr>
+                  </tbody>
+                </table>
+               </td>
+              </tr>
+              <tr align="center">
+                <td bgcolor="#999999" height="4"><img src="../img/a_nada.gif" height="1" width="1"></td>
+              </tr>
+            </tbody></table>
+            </div></td>
+        </tr>
+        </tbody></table>
+    </td>
+  </tr>
+</tbody></table>
+</body></html>
