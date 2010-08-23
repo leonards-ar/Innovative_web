@@ -7,13 +7,13 @@ class WebUserController {
     def save = {
         def webUserInstance = new WebUser(params)
         //response.setHeader('Access-Control-Allow-Origin', '*')
-        
+        webUserInstance.creationDate = new Date();
         if(!webUserInstance.hasErrors() && webUserInstance.save()) {
             sendNotification(webUserInstance)
-           render 'jsonHandler({"result":"true"})'
+            render 'jsonHandler({"result":"true"})'
         }
         else {
-           render 'jsonHandler({"result":"false"})'
+            render 'jsonHandler({"result":"false"})'
         }
     }
 
@@ -25,9 +25,9 @@ class WebUserController {
         WebUser user = cmd.getUser()
         //response.setHeader('Access-Control-Allow-Origin', '*')
         if (user){
-           render 'jsonHandler({"result":"true"})'
+            render 'jsonHandler({"result":"true"})'
         }else{
-           render 'jsonHandler({"result":"false"})'
+            render 'jsonHandler({"result":"false"})'
         }
     }
 
@@ -38,11 +38,20 @@ class WebUserController {
         if(userMail != null) {
             try{
                 mailService.sendMail {
-                    from "info@innovativemedicines.com"
+                    from grailsApplication.config.application.from
                     to userMail
                     subject "Bienvenido a Innovative Medicines"
                     body (view:"/emails/registrationWelcome", model:[webUser:webUser])
                 }
+
+                
+                mailService.sendMail {
+                    from grailsApplication.config.application.from
+                    to grailsApplication.config.application.addressee
+                    subject "Aviso de notificación de un nuevo usuario"
+                    body (view:"/emails/registrationNotification", model:[webUser:webUser])
+                }
+
                 return true;
             } catch(Exception e) {
                 log.error "Problem sending email $e.message", e
@@ -52,6 +61,7 @@ class WebUserController {
             log.error "There is no email for ${webUser}"
             return false;
         }
+
     }
 
 }

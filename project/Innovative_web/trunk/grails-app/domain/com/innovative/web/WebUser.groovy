@@ -14,6 +14,7 @@ class WebUser {
     String medicalCentre
     String country
     String interests
+    Date creationDate
 
     static transients = ['confirmation']
     
