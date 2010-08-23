@@ -32,13 +32,17 @@ grails.converters.encoding="UTF-8"
 // enabled native2ascii conversion of i18n properties files
 grails.enable.native2ascii = true
 
+
+application.from="info@innovativemedicines.com"
 // set per-environment serverURL stem for creating absolute links
 environments {
     production {
         grails.serverURL = "http://www.changeme.com"
+        application.addressee="cmassone@innovativemedicines.com.ar"
     }
     development {
         grails.serverURL = "http://localhost:8080/${appName}"
+        application.addressee="fbarreraoro@gmail.com"
     }
     test {
         grails.serverURL = "http://localhost:8080/${appName}"
