@@ -21,6 +21,20 @@ class WebUserController {
         render(view:"/emails/registrationWelcome")
     }
 
+    def list = {
+        def offset = params.offset ? params.offset : 0
+        def max = params.max ? params.max.toInteger() : 30
+        def webUserInstanceList = WebUser.list([max: max, offset: offset, sort: 'surname', order: 'asc'])
+
+        render(view:"list", model:[webUserInstanceList: webUserInstanceList, webUserInstanceTotal:WebUser.count()])
+    }
+
+    def show = {
+        def webUserInstance = WebUser.findById(params.id)
+
+        render(view:"show", model:[webUserInstance:webUserInstance])
+    }
+
     def login = {LoginCommand cmd ->
         WebUser user = cmd.getUser()
         //response.setHeader('Access-Control-Allow-Origin', '*')
