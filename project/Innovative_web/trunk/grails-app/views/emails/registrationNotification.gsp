@@ -59,6 +59,11 @@
             </tbody>
           </td>
         </tr>
+        <tr>
+          <td>
+            Para poder ver la lista completa dirigirse al listado completo,<a href="http://labs.mindpool.com.ar:8080/innovativeweb">haga click aqui</a>
+          </td>
+        </tr>
       </tbody>
     </table>
   </body>
