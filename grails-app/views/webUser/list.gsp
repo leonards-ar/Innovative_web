@@ -31,6 +31,8 @@
                             <g:sortableColumn property="country" title="${message(code: 'webuser.country', default: 'Country')}" />
                         
                             <g:sortableColumn property="occupation" title="${message(code: 'webuser.occupation', default: 'Occupation')}" />
+
+                            <g:sortableColumn property="creationDate" title="${message(code: 'webuser.creationDate', default: 'Registered Date')}" />
                         
                         </tr>
                     </thead>
@@ -47,6 +49,8 @@
                             <td>${fieldValue(bean: webUserInstance, field: "country")}</td>
                         
                             <td>${fieldValue(bean: webUserInstance, field: "occupation")}</td>
+
+                            <td>${fieldValue(bean: webUserInstance, field: "creationDate")}</td>
                         
                         </tr>
                     </g:each>

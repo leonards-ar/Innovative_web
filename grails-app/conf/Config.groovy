@@ -9,6 +9,7 @@
 // if(System.properties["${appName}.config.location"]) {
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
+import grails.plugins.springsecurity.SecurityConfigType
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
 grails.mime.use.accept.header = false
 grails.mime.types = [ html: ['text/html','application/xhtml+xml'],
@@ -88,3 +89,17 @@ grails {
     }
 }
      
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'com.innovative.web.User'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.innovative.web.UserRole'
+grails.plugins.springsecurity.authority.className = 'com.innovative.web.Role'
+grails.plugins.springsecurity.securityConfigType = SecurityConfigType.InterceptUrlMap
+grails.plugins.springsecurity.interceptUrlMap = [
+
+    '/webUser/list':    ['ROLE_USER'],
+    '/webUser/show':    ['ROLE_USER'],
+    '/webUser/**'  :    ['IS_AUTHENTICATED_ANONYMOUSLY'],
+    '/**'          :    ['IS_AUTHENTICATED_ANONYMOUSLY']
+
+    
+]

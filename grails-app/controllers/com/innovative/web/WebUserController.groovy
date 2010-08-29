@@ -2,6 +2,8 @@ package com.innovative.web
 
 class WebUserController {
 
+    def springSecurityService
+
     def mailService
     
     def save = {
@@ -24,7 +26,9 @@ class WebUserController {
     def list = {
         def offset = params.offset ? params.offset : 0
         def max = params.max ? params.max.toInteger() : 30
-        def webUserInstanceList = WebUser.list([max: max, offset: offset, sort: 'surname', order: 'asc'])
+        def sort = params.sort ? params.sort : 'surname'
+        def order = params.order ? params.order : 'asc'
+        def webUserInstanceList = WebUser.list([max: max, offset: offset, sort: sort, order: order])
 
         render(view:"list", model:[webUserInstanceList: webUserInstanceList, webUserInstanceTotal:WebUser.count()])
     }
