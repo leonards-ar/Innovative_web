@@ -15,7 +15,7 @@ environments {
 		dataSource {
                     // dbCreate = "create-drop" // one of 'create', 'create-drop','update'
                     dbCreate = 'update'
-                    url = "jdbc:mysql://localhost/innovative_web_db?useUnicode=true&characterEncoding=utf-8"
+                    url = "jdbc:mysql://localhost/innovative_web_db?useUnicode=true&characterEncoding=utf-8&autoReconnect=true"
 		}
                 hibernate {
                     show_sql=true
@@ -24,13 +24,13 @@ environments {
 	test {
 		dataSource {
                     dbCreate = "update"
-                    url = "jdbc:mysql://localhost/innovative_web_db?useUnicode=true&characterEncoding=utf-8"
+                    url = "jdbc:mysql://localhost/innovative_web_db?useUnicode=true&characterEncoding=utf-8&autoReconnect=true"
 		}
 	}
 	production {
 		dataSource {
                     //dbCreate = "update"
-                    url = "jdbc:mysql://localhost/innovative_web_db?useUnicode=true&characterEncoding=utf-8"
+                    url = "jdbc:mysql://localhost/innovative_web_db?useUnicode=true&characterEncoding=utf-8&autoReconnect=true"
 		}
         }
 }
