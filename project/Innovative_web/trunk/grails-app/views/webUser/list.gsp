@@ -12,6 +12,9 @@
         <g:javascript library="lightbox"/>
     </head>
     <body>
+        <div class="welcomeBox">
+          <g:link controller="logout"><g:message code="logout"/></g:link>
+        </div>
         <div class="body">
             <h1><g:message code="webuser.list.label" default="Registered User List" /></h1>
             <g:if test="${flash.message}">

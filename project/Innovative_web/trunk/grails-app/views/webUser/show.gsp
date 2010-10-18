@@ -14,8 +14,9 @@
     <body>
        
         <div class="body">
-
-          <g:link action="#" class="lbAction" rel="deactivate" style="align:right;"><g:message code="default.close" default="Close"/></g:link>
+          <div class="welcomebox">
+            <g:link action="#" class="lbAction" rel="deactivate" style="align:right;"><g:message code="default.close" default="Close"/></g:link>
+          </div>
 
             <h1><g:message code="webuser.show.label" default="Registered User Detail Information"/></h1>
             <g:if test="${flash.message}">
